@@ -1,3 +1,4 @@
+This is a simple boilerplate to get up and running with Electron and React(React-Redux,React-Router,antd).
 # Electron-React
 Fork from [electron-vue](https://github.com/SimulatedGREG/electron-vue) and replace vue with react
 * An electron-react project
