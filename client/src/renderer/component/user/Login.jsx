@@ -9,26 +9,11 @@ import { withRouter } from 'react-router-dom'
 import './style.css'
 import { login_in_action } from './action'
 
-import fs from 'fs'
-import path from 'path'
-import { remote, shell } from 'electron'
 const base64Img = 'https://desk-fd.zol-img.com.cn/t_s1440x900c5/g6/M00/04/0D/ChMkKl-3jyuIYeYRAAuEPzwPt90AAFlsgFpcwAAC4RX412.jpg'
-//  fs.readFileSync(path.join(remote.app.getPath('userData'), 'image', 'tiktok', 'bg.txt')).toString()
 class Login extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      rememberMe: true
-    }
-    this.handleRememberMe = this.handleRememberMe.bind(this)
     this.onFinish = this.onFinish.bind(this)
-  }
-
-  handleRememberMe (e) {
-    const val = e.target.value
-    this.setState({
-      rememberMe: val
-    })
   }
 
   onFinish (values) {
@@ -82,14 +67,14 @@ class Login extends Component {
 
                 <a className="login-form-forgot" href="" >
                 Forgot password
-            </a>
+                </a>
               </Form.Item>
 
               <Form.Item>
                 <Button type="primary" htmlType="submit" className="login-form-button">
-                Log in
-            </Button>
-            Or <a href="" >register now!</a>
+                  Log in
+                </Button>
+                  Or <a href="">register now!</a>
               </Form.Item>
             </Form>
           </Card>
