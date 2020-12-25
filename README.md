@@ -14,27 +14,27 @@ Fork from [electron-vue](https://github.com/SimulatedGREG/electron-vue) and repl
 ``` bash
 git clone https://github.com/1046617651/electron-react.git
 ```
-## start server
+# start server
 ``` bash
 cd server
 npm install
 npm run start
 ```
-## start Electron-React
+# start Electron-React
 ```bash
 cd client
 npm install
 npm run dev
 ```
 
-## login page
+# login page
 ```json
 {
     "username":"jack",
     "password":"123456"
 }
 ```
-#### Build Setup
+# Build Setup
 
 ``` bash
 # install dependencies
