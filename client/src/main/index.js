@@ -1,8 +1,6 @@
 'use strict'
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
-import fs from 'fs'
-import os from 'os'
 if (!app.requestSingleInstanceLock()) {
   app.quit()
 } else {
@@ -13,23 +11,6 @@ if (!app.requestSingleInstanceLock()) {
   const winURL = process.env.NODE_ENV === 'development'
     ? 'http://localhost:9081'
     : `file://${path.join(__dirname, 'index.html')}`
-  function loadExtension (extensionHash) {
-    const chrome_extension_dir = `${os.homedir()}\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions`
-    const extension_dir = path.join(chrome_extension_dir, extensionHash)
-    if (fs.existsSync(extension_dir)) {
-      let versions = fs.readdirSync(extension_dir)
-      if (versions && versions.length > 0) {
-        versions = versions.sort((val1, val2) => {
-          const stat1 = fs.statSync(path.join(extension_dir, val1))
-          const stat2 = fs.statSync(path.join(extension_dir, val2))
-          return stat2.mtime - stat1.mtime
-        })
-        const lastVersion = versions[0]
-        BrowserWindow.addDevToolsExtension(
-          path.join(extension_dir, lastVersion))
-      }
-    }
-  }
   function createWindow () {
   /**
    * Initial window options
@@ -44,12 +25,6 @@ if (!app.requestSingleInstanceLock()) {
     })
 
     mainWindow.loadURL(winURL)
-    if (process.env.NODE_ENV === 'development') {
-      const react_devtool_extension_hash = 'fmkadmapgofadopljbjfkapdkoienihi'
-      const redux_devtool_extension_hash = 'lmhkpmbekcpmknklioeibfkpmmfibljd'
-      loadExtension(react_devtool_extension_hash)
-      loadExtension(redux_devtool_extension_hash)
-    }
     mainWindow.on('closed', () => {
       mainWindow = null
     })

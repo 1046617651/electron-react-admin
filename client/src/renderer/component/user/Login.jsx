@@ -8,8 +8,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import './style.css'
 import { login_in_action } from './action'
-
-const base64Img = 'https://desk-fd.zol-img.com.cn/t_s1440x900c5/g6/M00/04/0D/ChMkKl-3jyuIYeYRAAuEPzwPt90AAFlsgFpcwAAC4RX412.jpg'
+const base64Img = 'https://b.zol-img.com.cn/desk/bizhi/image/10/4096x2160/1598319721647.jpg'
 class Login extends Component {
   constructor (props) {
     super(props)
@@ -23,8 +22,8 @@ class Login extends Component {
 
   render () {
     return (
-      <Row id="login-container" type="flex" justify="center" align="middle" style={{ minHeight: '100vh', backgroundImage: `url("${base64Img}")` }} >
-        <Col span="6">
+      <Row id="login-container" type="flex" justify="center" align="middle" style={{ minHeight: '100vh', backgroundImage: `url("${base64Img}")`, backgroundSize: 'cover' }} >
+        <Col>
           <Card>
             <Form
               name="normal_login"
