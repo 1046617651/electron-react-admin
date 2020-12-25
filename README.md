@@ -11,7 +11,7 @@ Fork from [electron-vue](https://github.com/SimulatedGREG/electron-vue) and repl
 
 # Install
 ``` bash
-git clone 
+git clone https://github.com/1046617651/electron-react.git
 ```
 ## start server
 ``` bash
