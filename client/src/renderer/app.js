@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Login from './component/user/login'
+import Login from './component/user/Login'
 import Site from './component/site'
 // import PrivateRoute from './component/site/PrivateRoute'
 import page from './page'
