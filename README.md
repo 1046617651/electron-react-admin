@@ -35,7 +35,7 @@ npm run dev
 }
 ```
 # Demo
-
+![demo](https://github.com/1046617651/electron-react-admin/blob/main/gitignore/demo.gif)
 # Build Setup
 
 ``` bash
