@@ -14,15 +14,10 @@ function RouteWrapper ({
   ...rest
 }) {
   return (
-    <Route {...rest} render={(props) => {
-      if (authed) {
-        return <Layout {...props}>
-      <Component {...props} />
-    </Layout>
-      } else {
-        <Redirect to={{ pathname: '/', state: { from: props.location } }}/>
-      }
-    }} />
+    // eslint-disable-next-line multiline-ternary
+    authed ? <Route {...rest} render={(props) => {
+      return <Layout {...props}><Component {...props} /></Layout>
+    }} /> : <Redirect to='/'/>
   )
 }
 class App extends Component {
